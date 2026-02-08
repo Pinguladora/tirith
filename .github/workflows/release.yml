@@ -14,6 +14,11 @@ permissions:
   contents: write
   packages: write # For GHCR Docker images
 
+# never cancel releases
+concurrency:
+  group: release-${{ github.ref_name }}
+  cancel-in-progress: false
+
 jobs:
   completions:
     name: Generate Completions
