@@ -72,7 +72,7 @@ jobs:
 
       - name: Download completions (Unix)
         if: runner.os != 'Windows'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: completions-man
           path: staging/
@@ -83,7 +83,7 @@ jobs:
 
       - name: Download completions (Windows)
         if: runner.os == 'Windows'
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: completions-man
           path: staging/
@@ -125,7 +125,7 @@ jobs:
           - { os: windows-latest, target: x86_64-pc-windows-msvc }
     steps:
       - name: Download artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: tirith-${{ matrix.target }}
 
@@ -164,7 +164,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           path: artifacts
           merge-multiple: true
@@ -232,7 +232,7 @@ jobs:
           path: source
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           path: artifacts
           merge-multiple: true
@@ -292,7 +292,7 @@ jobs:
           registry-url: https://registry.npmjs.org
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           path: artifacts
           merge-multiple: true
@@ -383,7 +383,7 @@ jobs:
           path: source
 
       - name: Download all artifacts
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           path: artifacts
           merge-multiple: true
@@ -584,7 +584,7 @@ jobs:
       - uses: actions/checkout@v4
 
       - name: Download Windows artifact
-        uses: actions/download-artifact@v4
+        uses: actions/download-artifact@v7
         with:
           name: tirith-x86_64-pc-windows-msvc
           path: artifacts
